@@ -19,7 +19,7 @@ public class Transport {
         this.productionCountry = productionCountry;
 
         if(color == null || color.isBlank() || color.isEmpty()){
-            this.color = "белый";
+            this.color = "неизвестно";
         }else{
             this.color = color;
         }
