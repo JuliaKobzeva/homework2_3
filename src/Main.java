@@ -19,5 +19,14 @@ public class Main {
 
         System.out.println(lastochka);
         System.out.println(leningrad);
+
+
+        Bus paz = new Bus("ПАЗ","3205",2010,"Россия","белый",110);
+        Bus kia = new Bus("Kia","Granbird",2016,"Корея","белый",100);
+        Bus liaz = new Bus("ЛиАЗ","5256",2012,"Россия","зеленый",100);
+
+        System.out.println(paz);
+        System.out.println(kia);
+        System.out.println(liaz);
     }
 }

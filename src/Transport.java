@@ -70,4 +70,11 @@ public class Transport {
             this.maxSpeed = maxSpeed;
         }
     }
+
+    @Override
+    public String toString() {
+        return brand + " " + model + ", год выпуска: " + productionYear +
+                ", страна производства: " + productionCountry + ", цвет: " + color +
+                ", максимальная скорость: " + maxSpeed;
+    }
 }
