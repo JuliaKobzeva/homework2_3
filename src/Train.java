@@ -109,4 +109,8 @@ public class Train extends Transport{
                 " км/ч, стоимость билетов: " + ticketCost + " руб., время в пути: " + tripTime + ", станция отправления: " +
                 departureStation + ", станция прибытия: " + finalStation + ", количество вагонов: " + numberOfWagons;
     }
+
+    public void refill(){
+        System.out.println("Заправьте поезд дизелем.");
+    }
 }

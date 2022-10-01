@@ -28,5 +28,7 @@ public class Main {
         System.out.println(paz);
         System.out.println(kia);
         System.out.println(liaz);
+
+        audiA8.refill();
     }
 }

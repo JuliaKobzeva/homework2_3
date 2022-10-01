@@ -229,4 +229,8 @@ public class Car extends Transport{
         }
         return true;
     }
+
+    public void refill(){
+        System.out.println("Заправьте машину бензином, дизелем или зарядите на специальных электроду-парковках, если это электрокар.");
+    }
 }
