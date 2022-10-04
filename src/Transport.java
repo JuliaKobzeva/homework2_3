@@ -1,35 +1,48 @@
 public abstract class Transport {
     private String brand;
     private String model;
-    private int productionYear;
-    private String productionCountry;
-    private String color;
-    private int maxSpeed;
+    private double engineVolume;
 
-    public Transport(String brand, String model, int productionYear, String productionCountry, String color, int maxSpeed) {
+//    private int productionYear;
+//    private String productionCountry;
+//    private String color;
+//    private int maxSpeed;
+
+    public Transport(String brand, String model, double engineVolume) {
         this.brand = brand;
         this.model = model;
 
-        if(productionYear < 0){
-            this.productionYear = Math.abs(productionYear);
-        }else{
-            this.productionYear = productionYear;
-        }
-
-        this.productionCountry = productionCountry;
-
-        if(color == null || color.isBlank() || color.isEmpty()){
-            this.color = "неизвестно";
-        }else{
-            this.color = color;
-        }
-
-        if(maxSpeed < 0){
-            this.maxSpeed = Math.abs(maxSpeed);
-        }else{
-            this.maxSpeed = maxSpeed;
+        if (engineVolume < 0) {
+            this.engineVolume = Math.abs(engineVolume);
+        } else {
+            this.engineVolume = engineVolume;
         }
     }
+
+//    public Transport(String brand, String model, int productionYear, String productionCountry, String color, int maxSpeed) {
+//        this.brand = brand;
+//        this.model = model;
+
+//        if(productionYear < 0){
+//            this.productionYear = Math.abs(productionYear);
+//        }else{
+//            this.productionYear = productionYear;
+//        }
+//
+//        this.productionCountry = productionCountry;
+//
+//        if(color == null || color.isBlank() || color.isEmpty()){
+//            this.color = "неизвестно";
+//        }else{
+//            this.color = color;
+//        }
+//
+//        if(maxSpeed < 0){
+//            this.maxSpeed = Math.abs(maxSpeed);
+//        }else{
+//            this.maxSpeed = maxSpeed;
+//        }
+//    }
 
     public String getBrand() {
         return brand;
@@ -39,44 +52,57 @@ public abstract class Transport {
         return model;
     }
 
-    public int getProductionYear() {
-        return productionYear;
+    public double getEngineVolume() {
+        return engineVolume;
     }
 
-    public String getProductionCountry() {
-        return productionCountry;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        if(color == null || color.isBlank() || color.isEmpty()){
-            this.color = "белый";
+    public void setEngineVolume(double engineVolume) {
+        if(engineVolume < 0){
+            this.engineVolume = Math.abs(engineVolume);
         }else{
-            this.color = color;
+            this.engineVolume = engineVolume;
         }
     }
 
-    public int getMaxSpeed() {
-        return maxSpeed;
-    }
-
-    public void setMaxSpeed(int maxSpeed) {
-        if(maxSpeed < 0){
-            this.maxSpeed = Math.abs(maxSpeed);
-        }else{
-            this.maxSpeed = maxSpeed;
-        }
-    }
+//    public int getProductionYear() {
+//        return productionYear;
+//    }
+//
+//    public String getProductionCountry() {
+//        return productionCountry;
+//    }
+//
+//    public String getColor() {
+//        return color;
+//    }
+//
+//    public void setColor(String color) {
+//        if(color == null || color.isBlank() || color.isEmpty()){
+//            this.color = "белый";
+//        }else{
+//            this.color = color;
+//        }
+//    }
+//
+//    public int getMaxSpeed() {
+//        return maxSpeed;
+//    }
+//
+//    public void setMaxSpeed(int maxSpeed) {
+//        if(maxSpeed < 0){
+//            this.maxSpeed = Math.abs(maxSpeed);
+//        }else{
+//            this.maxSpeed = maxSpeed;
+//        }
+//    }
 
     @Override
     public String toString() {
-        return brand + " " + model + ", год выпуска: " + productionYear +
-                ", страна производства: " + productionCountry + ", цвет: " + color +
-                ", максимальная скорость: " + maxSpeed;
+        return brand + " " + model + ", объем двигателя: " + engineVolume;
     }
 
-    public abstract void refill();
+    public abstract void startMoving();
+    public abstract void finishMoving();
+
+//    public abstract void refill();
 }
