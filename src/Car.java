@@ -1,6 +1,6 @@
 import java.time.LocalDate;
 
-public class Car extends Transport{
+public class Car extends Transport implements Competing{
 
     public Car(String brand, String model, double engineVolume) {
         super(brand, model, engineVolume);
@@ -9,6 +9,21 @@ public class Car extends Transport{
     public void startMoving(){
     }
     public void finishMoving(){
+    }
+
+    @Override
+    public int pitStop() {
+        return 0;
+    }
+
+    @Override
+    public int maxSpeed() {
+        return 0;
+    }
+
+    @Override
+    public int bestTime() {
+        return 0;
     }
 
 //    public static class Key{
