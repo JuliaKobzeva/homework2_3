@@ -1,5 +1,5 @@
 public interface Competing {
-    int pitStop();
-    int maxSpeed();
-    int bestTime();
+    void  pitStop();
+    void   maxSpeed();
+    void   bestTime();
 }

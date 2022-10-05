@@ -10,17 +10,17 @@ public class Truck extends Transport implements Competing{
     }
 
     @Override
-    public int pitStop() {
-        return 0;
+    public void  pitStop() {
+        System.out.println("Остановка для дозаправки");
     }
 
     @Override
-    public int maxSpeed() {
-        return 0;
+    public void  maxSpeed() {
+        System.out.println("Достигнута максимальная скорость");
     }
 
     @Override
-    public int bestTime() {
-        return 0;
+    public void  bestTime() {
+        System.out.println("Лучшее время круга");
     }
 }

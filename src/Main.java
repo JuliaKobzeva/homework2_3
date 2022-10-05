@@ -29,6 +29,10 @@ public class Main {
         System.out.println(zil);
         System.out.println(hyundai2);
 
+        audiA8.pitStop();
+        paz.maxSpeed();
+        zil.bestTime();
+
 //        audiA8.refill();
     }
 }
