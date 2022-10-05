@@ -1,4 +1,4 @@
-public class DriverC <C extends Truck>{
+public class DriverC <C extends Transport>{
 
     private String name;
     private String driverLicense;
@@ -16,6 +16,7 @@ public class DriverC <C extends Truck>{
     }
 
     public void startMoving(C truck){
+        System.out.println("Водитель " + name + " управляет грузовиком " + truck.getBrand() + " " + truck.getModel() + " и будет участвовать в заезде.");
     }
 
     public void finishMoving(C truck){

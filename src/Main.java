@@ -33,6 +33,14 @@ public class Main {
         paz.maxSpeed();
         zil.bestTime();
 
+        DriverB <Car> sasha = new DriverB("Саша","B",5);
+        DriverC <Truck> petr = new DriverC("Петр","C",5);
+        DriverD <Bus> dima = new DriverD("Дима","D",5);
+
+        sasha.startMoving(bmwZ8);
+        petr.startMoving(gaz);
+        dima.startMoving(hyundai);
+
 //        audiA8.refill();
     }
 }

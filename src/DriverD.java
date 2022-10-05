@@ -1,4 +1,4 @@
-public class DriverD <D extends Bus>{
+public class DriverD <D extends Transport>{
 
     private String name;
     private String driverLicense;
@@ -16,6 +16,7 @@ public class DriverD <D extends Bus>{
     }
 
     public void startMoving(D bus){
+        System.out.println("Водитель " + name + " управляет автобусом " + bus.getBrand() + " " + bus.getModel() + " и будет участвовать в заезде.");
     }
 
     public void finishMoving(D bus){
