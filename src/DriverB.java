@@ -15,6 +15,7 @@ public class DriverB <B extends Transport> {
         }
     }
 
+
     public void startMoving(B car){
         System.out.println("Водитель " + name + " управляет автомобилем " + car.getBrand() + " " + car.getModel() + " и будет участвовать в заезде.");
     }

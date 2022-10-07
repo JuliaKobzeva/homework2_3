@@ -1,9 +1,9 @@
 public class Main {
     public static void main(String[] args) {
-        Car ladaGrande = new Car ("Lada", "Grande", 1.7);
-        Car audiA8 = new Car ("Audi", "A8 50 L TDI quattro", 3.0);
-        Car bmwZ8 = new Car ("BMW", "Z8", 3.0);
-        Car kiaSportage = new Car ("Kia", "Sportage 4 поколение", 2.4);
+        Car ladaGrande = new Car ("Lada", "Grande", 1.7, Car.BodyType.SEDAN );
+        Car audiA8 = new Car ("Audi", "A8 50 L TDI quattro", 3.0, Car.BodyType.SEDAN);
+        Car bmwZ8 = new Car ("BMW", "Z8", 3.0, Car.BodyType.SEDAN);
+        Car kiaSportage = new Car ("Kia", "Sportage 4 поколение", 2.4, Car.BodyType.SEDAN);
 
 
         System.out.println(ladaGrande);
@@ -11,19 +11,19 @@ public class Main {
         System.out.println(bmwZ8);
         System.out.println(kiaSportage);
 
-        Bus paz = new Bus("ПАЗ","3205",4.6);
-        Bus kia = new Bus("Kia","Granbird",4.6);
-        Bus liaz = new Bus("ЛиАЗ","5256",4.6);
-        Bus hyundai = new Bus("Hyundai","Universe",4.6);
+        Bus paz = new Bus("ПАЗ","3205",4.6, Bus.Capacity.AVERAGE);
+        Bus kia = new Bus("Kia","Granbird",4.6, Bus.Capacity.AVERAGE);
+        Bus liaz = new Bus("ЛиАЗ","5256",4.6, Bus.Capacity.AVERAGE);
+        Bus hyundai = new Bus("Hyundai","Universe",4.6, Bus.Capacity.AVERAGE);
 
         System.out.println(paz);
         System.out.println(kia);
         System.out.println(liaz);
         System.out.println(hyundai);
 
-        Truck gaz = new Truck ("ГАЗ", "66", 4.2);
-        Truck zil = new Truck ("ЗИЛ", "130", 4.2);
-        Truck hyundai2 = new Truck ("Hyundai", "Porter", 4.2);
+        Truck gaz = new Truck ("ГАЗ", "66", 4.2, Truck.Weight.N2);
+        Truck zil = new Truck ("ЗИЛ", "130", 4.2, Truck.Weight.N2);
+        Truck hyundai2 = new Truck ("Hyundai", "Porter", 4.2, Truck.Weight.N2);
 
         System.out.println(gaz);
         System.out.println(zil);
@@ -40,6 +40,8 @@ public class Main {
         sasha.startMoving(bmwZ8);
         petr.startMoving(gaz);
         dima.startMoving(hyundai);
+
+        Car.BodyType.printType(kiaSportage);
 
 //        audiA8.refill();
     }

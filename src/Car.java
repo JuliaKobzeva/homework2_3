@@ -2,8 +2,40 @@ import java.time.LocalDate;
 
 public class Car extends Transport implements Competing{
 
-    public Car(String brand, String model, double engineVolume) {
+    public enum BodyType {
+        SEDAN("седан"), HATCHBACK("хэтчбэк"), COUPE("купе"), STATION_VAGON("универсал"), JEEP("внедорожник"),
+        CROSSOVER("кроссовер"), PICKUP("пикап"), VAN("фургон"), MINIVAN("минивэн");
+
+        public static void printType (Car car){
+            if(car.bodyType == null){
+                System.out.println("Данных по авто недостаточно.");
+            } else System.out.println(car.bodyType);
+        }
+
+        private String bodyType;
+
+        BodyType(String bodyType) {
+            this.bodyType = bodyType;
+        }
+
+        public String getBodyType() {
+            return bodyType;
+        }
+    }
+
+    private BodyType bodyType;
+
+    public Car(String brand, String model, double engineVolume, BodyType bodyType) {
         super(brand, model, engineVolume);
+        this.bodyType = bodyType;
+    }
+
+    public BodyType getBodyType() {
+        return bodyType;
+    }
+
+    public void setBodyType(BodyType bodyType) {
+        this.bodyType = bodyType;
     }
 
     public void startMoving(){
