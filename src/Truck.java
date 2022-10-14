@@ -40,6 +40,16 @@ public class Truck extends Transport implements Competing{
     public void finishMoving(){
     }
 
+    public void printType() {
+        if (weight == null) {
+            System.out.println("Данных по авто недостаточно.");
+        } else {
+            String from = weight.getFrom() == null ? "" : "от " + weight.getFrom() + " ";
+            String to = weight.getTo() == null ? "" : "до " + weight.getTo();
+            System.out.println(from + to);
+        }
+    }
+
     @Override
     public void  pitStop() {
         System.out.println("Остановка для дозаправки");
@@ -53,5 +63,12 @@ public class Truck extends Transport implements Competing{
     @Override
     public void  bestTime() {
         System.out.println("Лучшее время круга");
+    }
+
+    public boolean check(){
+        if (Math.random() < 0.5){
+            return false;
+        }
+        return true;
     }
 }

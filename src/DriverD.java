@@ -24,4 +24,31 @@ public class DriverD <D extends Transport>{
 
     public void refuel(D bus){
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDriverLicense() {
+        return driverLicense;
+    }
+
+    public void setDriverLicense(String driverLicense) {
+        if(driverLicense == null){
+            throw new IllegalArgumentException("Необходимо указать тип прав");
+        }
+        this.driverLicense = driverLicense;
+    }
+
+    public int getExperience() {
+        return experience;
+    }
+
+    public void setExperience(int experience) {
+        this.experience = experience;
+    }
 }

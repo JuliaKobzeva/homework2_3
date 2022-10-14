@@ -40,6 +40,14 @@ public class Bus extends Transport implements Competing{
     public void finishMoving(){
     }
 
+    public void printType() {
+        if (capacity == null) {
+            System.out.println("Данных по авто недостаточно.");
+        } else {
+            System.out.println("от " + capacity.getFrom() + " до " + capacity.getTo());
+        }
+    }
+
     @Override
     public void  pitStop() {
         System.out.println("Остановка для дозаправки");
@@ -53,6 +61,11 @@ public class Bus extends Transport implements Competing{
     @Override
     public void  bestTime() {
         System.out.println("Лучшее время круга");
+    }
+
+    public boolean check(){
+        System.out.println("Автобус в диагностике не нуждается");
+        return true;
     }
 
     //    public Bus(String brand, String model, int productionYear, String productionCountry, String color, int maxSpeed) {

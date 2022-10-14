@@ -104,5 +104,8 @@ public abstract class Transport {
     public abstract void startMoving();
     public abstract void finishMoving();
 
+    public abstract void printType();
+    public abstract boolean check();
+
 //    public abstract void refill();
 }

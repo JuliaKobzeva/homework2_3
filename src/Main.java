@@ -41,8 +41,33 @@ public class Main {
         petr.startMoving(gaz);
         dima.startMoving(hyundai);
 
-        Car.BodyType.printType(kiaSportage);
+        audiA8.printType();
+        paz.printType();
+        zil.printType();
+
+        service(
+                ladaGrande, audiA8, bmwZ8, kiaSportage,
+                paz, kia,liaz, hyundai,
+                gaz, zil, hyundai2
+        );
+
 
 //        audiA8.refill();
+    }
+
+    private static void service(Transport ... transports){
+        for (Transport transport : transports) {
+            serviceTransport (transport);
+        }
+    }
+
+    private static void serviceTransport (Transport transport){
+        try{
+            if(!transport.check()) {
+                throw new RuntimeException("Автомобиль " + transport.getBrand() + " " + transport.getModel() + " не прошел диагностику");
+            }
+        } catch (RuntimeException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }

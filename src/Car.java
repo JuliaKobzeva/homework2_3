@@ -6,12 +6,6 @@ public class Car extends Transport implements Competing{
         SEDAN("седан"), HATCHBACK("хэтчбэк"), COUPE("купе"), STATION_VAGON("универсал"), JEEP("внедорожник"),
         CROSSOVER("кроссовер"), PICKUP("пикап"), VAN("фургон"), MINIVAN("минивэн");
 
-        public static void printType (Car car){
-            if(car.bodyType == null){
-                System.out.println("Данных по авто недостаточно.");
-            } else System.out.println(car.bodyType);
-        }
-
         private String bodyType;
 
         BodyType(String bodyType) {
@@ -43,6 +37,14 @@ public class Car extends Transport implements Competing{
     public void finishMoving(){
     }
 
+    public void printType() {
+        if (bodyType == null) {
+            System.out.println("Данных по авто недостаточно.");
+        } else {
+            System.out.println(bodyType);
+        }
+    }
+
     @Override
     public void  pitStop() {
         System.out.println("Остановка для дозаправки");
@@ -56,6 +58,13 @@ public class Car extends Transport implements Competing{
     @Override
     public void  bestTime() {
         System.out.println("Лучшее время круга");
+    }
+
+    public boolean check(){
+        if (Math.random() < 0.5){
+            return false;
+        }
+        return true;
     }
 
 //    public static class Key{
