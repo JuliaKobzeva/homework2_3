@@ -1,10 +1,12 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
         Car ladaGrande = new Car ("Lada", "Grande", 1.7, Car.BodyType.SEDAN );
         Car audiA8 = new Car ("Audi", "A8 50 L TDI quattro", 3.0, Car.BodyType.SEDAN);
         Car bmwZ8 = new Car ("BMW", "Z8", 3.0, Car.BodyType.SEDAN);
         Car kiaSportage = new Car ("Kia", "Sportage 4 поколение", 2.4, Car.BodyType.SEDAN);
-
 
         System.out.println(ladaGrande);
         System.out.println(audiA8);
@@ -51,8 +53,53 @@ public class Main {
                 gaz, zil, hyundai2
         );
 
+        List<Transport>cars = new ArrayList<>(20);
+        cars.add(ladaGrande);
+        cars.add(audiA8);
+        cars.add(bmwZ8);
+        cars.add(kiaSportage);
+        cars.add(paz);
+        cars.add(kia);
+        cars.add(liaz);
+        cars.add(hyundai);
+        cars.add(gaz);
+        cars.add(zil);
+        cars.add(hyundai2);
+
+        ladaGrande.addDriverB(sasha);
+        paz.addDriverC(petr);
+        paz.addDriverD(dima);
+        ladaGrande.addMechanic(new Mechanic<Car>("Иван","Иванов","Grand"));
+        ladaGrande.addSponsor(new Sponsor("Дмитрий Дмитриев",100_000));
+
+        for(Transport transport : cars){
+            printInfo(transport);
+        }
+
 
 //        audiA8.refill();
+    }
+
+    public static void printInfo(Transport transport){
+        System.out.println("Информация по автомобилю: " + transport.getBrand() + " " + transport.getModel());
+        System.out.println("Водители: ");
+        for(DriverB<?> driverB : transport.getDriversB()){
+            System.out.println(driverB.getName());
+        }
+        for(DriverC<?> driverC : transport.getDriversC()){
+            System.out.println(driverC.getName());
+        }
+        for(DriverD<?> driverD : transport.getDriversD()){
+            System.out.println(driverD.getName());
+        }
+        System.out.println("Спонсоры: ");
+        for(Sponsor sponsor: transport.getSponsors()){
+            System.out.println(sponsor.getName());
+        }
+        System.out.println("Механики: ");
+        for(Mechanic<?> mechanic: transport.getMechanics()){
+            System.out.println(mechanic.getName() + " " + mechanic.getSurname() + " из " + mechanic.getCompany());
+        }
     }
 
     private static void service(Transport ... transports){
