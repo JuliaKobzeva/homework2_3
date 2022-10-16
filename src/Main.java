@@ -76,6 +76,14 @@ public class Main {
             printInfo(transport);
         }
 
+        ServiceStation<Transport> station1 = new ServiceStation<>("№1");
+        station1.addCar(ladaGrande);
+        station1.addCar(audiA8);
+        station1.addCar(gaz);
+        station1.addCar(zil);
+
+        station1.serviceCar();
+
 
 //        audiA8.refill();
     }
