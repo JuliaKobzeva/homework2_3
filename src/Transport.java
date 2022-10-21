@@ -1,17 +1,19 @@
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public abstract class Transport {
     private String brand;
     private String model;
     private double engineVolume;
 
-    List<DriverB<?>> driversB = new ArrayList<>();
-    List<DriverC<?>>driversC = new ArrayList<>();
-    List<DriverD<?>>driversD = new ArrayList<>();
+    Set<DriverB<?>> driversB = new HashSet<>();
+    Set<DriverC<?>>driversC = new HashSet<>();
+    Set<DriverD<?>>driversD = new HashSet<>();
 
-    List<Sponsor>sponsors = new ArrayList<>();
-    List<Mechanic<?>>mechanics = new ArrayList<>();
+    Set<Sponsor>sponsors = new HashSet<>();
+    Set<Mechanic<?>>mechanics = new HashSet<>();
 
 //    private int productionYear;
 //    private String productionCountry;
@@ -96,23 +98,23 @@ public abstract class Transport {
         }
     }
 
-    public List<DriverB<?>> getDriversB() {
+    public Set<DriverB<?>> getDriversB() {
         return driversB;
     }
 
-    public List<DriverC<?>> getDriversC() {
+    public  Set<DriverC<?>> getDriversC() {
         return driversC;
     }
 
-    public List<DriverD<?>> getDriversD() {
+    public  Set<DriverD<?>> getDriversD() {
         return driversD;
     }
 
-    public List<Sponsor> getSponsors() {
+    public  Set<Sponsor> getSponsors() {
         return sponsors;
     }
 
-    public List<Mechanic<?>> getMechanics() {
+    public  Set<Mechanic<?>> getMechanics() {
         return mechanics;
     }
 

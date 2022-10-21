@@ -1,5 +1,7 @@
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class Main {
     public static void main(String[] args) {
@@ -53,7 +55,7 @@ public class Main {
                 gaz, zil, hyundai2
         );
 
-        List<Transport>cars = new ArrayList<>(20);
+       Set<Transport> cars = new HashSet<>();
         cars.add(ladaGrande);
         cars.add(audiA8);
         cars.add(bmwZ8);
@@ -65,12 +67,20 @@ public class Main {
         cars.add(gaz);
         cars.add(zil);
         cars.add(hyundai2);
+        cars.add(hyundai2);
 
+        ladaGrande.addDriverB(sasha);
         ladaGrande.addDriverB(sasha);
         paz.addDriverC(petr);
         paz.addDriverD(dima);
-        ladaGrande.addMechanic(new Mechanic<Car>("Иван","Иванов","Grand"));
-        ladaGrande.addSponsor(new Sponsor("Дмитрий Дмитриев",100_000));
+
+        Mechanic<Car> ivan = new Mechanic("Иван","Иванов","Grand");
+        Sponsor dmitriy = new Sponsor("Дмитрий Дмитриев",100_000);
+        ladaGrande.addMechanic(ivan);
+        ladaGrande.addMechanic(ivan);
+
+        ladaGrande.addSponsor(dmitriy);
+        ladaGrande.addSponsor(dmitriy);
 
         for(Transport transport : cars){
             printInfo(transport);
