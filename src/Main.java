@@ -37,13 +37,13 @@ public class Main {
         paz.maxSpeed();
         zil.bestTime();
 
-        DriverB <Car> sasha = new DriverB("Саша","B",5);
-        DriverC <Truck> petr = new DriverC("Петр","C",5);
-        DriverD <Bus> dima = new DriverD("Дима","D",5);
+        DriverB sasha = new DriverB("Саша",'B',5, bmwZ8);
+        DriverC petr = new DriverC("Петр",'C',5, gaz);
+        DriverD dima = new DriverD("Дима",'D',5, hyundai);
 
-        sasha.startMoving(bmwZ8);
-        petr.startMoving(gaz);
-        dima.startMoving(hyundai);
+        sasha.startMoving();
+        petr.startMoving();
+        dima.startMoving();
 
         audiA8.printType();
         paz.printType();
@@ -69,10 +69,10 @@ public class Main {
         cars.add(hyundai2);
         cars.add(hyundai2);
 
-        ladaGrande.addDriverB(sasha);
-        ladaGrande.addDriverB(sasha);
-        paz.addDriverC(petr);
-        paz.addDriverD(dima);
+        ladaGrande.addDriver(sasha);
+        ladaGrande.addDriver(sasha);
+        paz.addDriver(petr);
+        gaz.addDriver(dima);
 
         Mechanic<Car> ivan = new Mechanic("Иван","Иванов","Grand");
         Sponsor dmitriy = new Sponsor("Дмитрий Дмитриев",100_000);
@@ -101,14 +101,8 @@ public class Main {
     public static void printInfo(Transport transport){
         System.out.println("Информация по автомобилю: " + transport.getBrand() + " " + transport.getModel());
         System.out.println("Водители: ");
-        for(DriverB<?> driverB : transport.getDriversB()){
-            System.out.println(driverB.getName());
-        }
-        for(DriverC<?> driverC : transport.getDriversC()){
-            System.out.println(driverC.getName());
-        }
-        for(DriverD<?> driverD : transport.getDriversD()){
-            System.out.println(driverD.getName());
+        for(Driver driver : transport.getDrivers()){
+            System.out.println(driver.getName());
         }
         System.out.println("Спонсоры: ");
         for(Sponsor sponsor: transport.getSponsors()){

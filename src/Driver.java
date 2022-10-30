@@ -1,22 +1,42 @@
-public abstract class Driver {
+public abstract class Driver <T extends Transport & Competing>{
     private String name;
-    private String driverLicense;
+    final private Character typeOfLicense;
     private int experience;
+    private T car;
 
-    public Driver(String name, String driverLicense, int experience) {
+    public Driver(String name, Character typeOfLicense, int experience, T car) {
         this.name = name;
-        this.driverLicense = driverLicense;
+
+        if(typeOfLicense.equals("B") && typeOfLicense.equals("C") && typeOfLicense.equals("D")){
+            throw new NullPointerException("Нет прав, иди в автошколу");
+        }else{
+            this.typeOfLicense = typeOfLicense;
+        }
 
         if (experience < 0) {
             this.experience = Math.abs(experience);
         } else {
             this.experience = experience;
         }
+
+        if(car != null){
+            this.car = car;
+        }
     }
 
-    public abstract void startMoving();
+    public void startMoving(){
+        System.out.println(name + " заводит " + car.getBrand() + " " + car.getModel());
+    }
 
-    public abstract void finishMoving();
+    public void finishMoving(){
+        System.out.println(name + " останавливает " + car.getBrand() + " " + car.getModel());
+    }
 
-    public abstract void refuel();
+    public void refuel(){
+        System.out.println(name + " заправляет " + car.getBrand() + " " + car.getModel());
+    }
+
+    public String getName() {
+        return name;
+    }
 }

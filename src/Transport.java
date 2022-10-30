@@ -8,9 +8,11 @@ public abstract class Transport {
     private String model;
     private double engineVolume;
 
-    Set<DriverB<?>> driversB = new HashSet<>();
-    Set<DriverC<?>>driversC = new HashSet<>();
-    Set<DriverD<?>>driversD = new HashSet<>();
+    Set<Driver> drivers = new HashSet<>();
+
+//    Set<DriverB> driversB = new HashSet<>();
+//    Set<DriverC>driversC = new HashSet<>();
+//    Set<DriverD>driversD = new HashSet<>();
 
     Set<Sponsor>sponsors = new HashSet<>();
     Set<Mechanic<?>>mechanics = new HashSet<>();
@@ -31,17 +33,18 @@ public abstract class Transport {
         }
     }
 
-    public void addDriverB(DriverB<?> driver){
-        driversB.add(driver);
-    }
 
-    public void addDriverC(DriverC<?> driver){
-        driversC.add(driver);
-    }
-
-    public void addDriverD(DriverD<?> driver){
-        driversD.add(driver);
-    }
+//    public void addDriverB(DriverB driver){
+//        driversB.add(driver);
+//    }
+//
+//    public void addDriverC(DriverC driver){
+//        driversC.add(driver);
+//    }
+//
+//    public void addDriverD(DriverD driver){
+//        driversD.add(driver);
+//    }
 
     public void addMechanic(Mechanic<?> mechanic){
         mechanics.add(mechanic);
@@ -51,7 +54,9 @@ public abstract class Transport {
         sponsors.add(sponsor);
     }
 
-
+    public void addDriver(Driver driver){
+        drivers.add(driver);
+    }
 
 //    public Transport(String brand, String model, int productionYear, String productionCountry, String color, int maxSpeed) {
 //        this.brand = brand;
@@ -98,16 +103,20 @@ public abstract class Transport {
         }
     }
 
-    public Set<DriverB<?>> getDriversB() {
-        return driversB;
-    }
+//    public Set<DriverB> getDriversB() {
+//        return driversB;
+//    }
+//
+//    public  Set<DriverC> getDriversC() {
+//        return driversC;
+//    }
+//
+//    public  Set<DriverD> getDriversD() {
+//        return driversD;
+//    }
 
-    public  Set<DriverC<?>> getDriversC() {
-        return driversC;
-    }
-
-    public  Set<DriverD<?>> getDriversD() {
-        return driversD;
+    public Set<Driver> getDrivers() {
+        return drivers;
     }
 
     public  Set<Sponsor> getSponsors() {
